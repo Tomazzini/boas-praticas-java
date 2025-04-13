@@ -13,7 +13,7 @@ public class AdopetConsoleApplication {
         // instanciando a classe
         ClientHttpConfiguration client = new ClientHttpConfiguration();
         AbrigoService abrigoService = new AbrigoService(client);
-        PetService petService = new PetService();
+        PetService petService = new PetService(client);
 
         System.out.println("##### BOAS VINDAS AO SISTEMA ADOPET CONSOLE #####");
         try {
