@@ -60,4 +60,15 @@ public class Abrigo {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return """
+                "id":%s,"nome":"%s","telefone":"%s","email":"%s"
+                """.formatted(this.id, this.nome, this.telefone, this.email);
+    }
 }
