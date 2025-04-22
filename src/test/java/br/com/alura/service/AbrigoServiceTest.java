@@ -43,4 +43,25 @@ class AbrigoServiceTest {
 
     }
 
+    @Test
+    void deveVerificarQuandoNaoHaAbrigosCadastrados() throws IOException, InterruptedException {
+        String expected = "Não há abrigos cadastrados";
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        PrintStream printStream = new PrintStream(baos);
+        System.setOut(printStream);
+
+        // retorna um array vazio quando não tem abrigo cadastrado
+        when(response.body()).thenReturn("[]");
+        when(client.dispararRequisicaoGet(anyString())).thenReturn(response);
+
+        abrigoService.listarAbrigo();
+
+        String[] lines = baos.toString().split(System.lineSeparator());
+        String actual = lines[0];
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+
 }
