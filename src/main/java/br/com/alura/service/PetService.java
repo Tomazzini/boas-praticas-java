@@ -59,12 +59,6 @@ public class PetService {
 
         scanner.close();
 
-//        System.out.println("Digite o id ou nome do abrigo:");
-//        String idOuNome = new Scanner(System.in).nextLine();
-//
-//        System.out.println("Digite o nome do arquivo CSV:");
-//        String nomeArquivo = new Scanner(System.in).nextLine();
-
         BufferedReader reader = null;
         try {
             reader = new BufferedReader(new FileReader(nomeArquivo));
