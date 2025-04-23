@@ -3,10 +3,6 @@ package br.com.alura.service;
 import br.com.alura.client.ClientHttpConfiguration;
 import br.com.alura.domain.Pet;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -28,7 +24,7 @@ public class PetService {
         System.out.println("Digite o id ou nome do abrigo:");
         String idOuNome = new Scanner(System.in).nextLine();
 
-        String uri = "http://localhost:8080/abrigos/" +idOuNome +"/pets";
+        String uri = "http://localhost:8080/abrigos/" + idOuNome + "/pets";
         HttpResponse<String> response = client.dispararRequisicaoGet(uri);
         int statusCode = response.statusCode();
         if (statusCode == 404 || statusCode == 500) {
@@ -44,7 +40,7 @@ public class PetService {
             String nome = pet.getNome();
             String raca = pet.getRaca();
             int idade = pet.getIdade();
-            System.out.println(id +" - " +tipo +" - " +nome +" - " +raca +" - " +idade +" ano(s)");
+            System.out.println(id + " - " + tipo + " - " + nome + " - " + raca + " - " + idade + " ano(s)");
         }
     }
 
@@ -63,7 +59,7 @@ public class PetService {
         try {
             reader = new BufferedReader(new FileReader(nomeArquivo));
         } catch (IOException e) {
-            System.out.println("Erro ao carregar o arquivo: " +nomeArquivo);
+            System.out.println("Erro ao carregar o arquivo: " + nomeArquivo);
         }
         String line;
         while ((line = reader.readLine()) != null) {
