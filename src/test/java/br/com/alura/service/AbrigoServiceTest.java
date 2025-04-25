@@ -66,7 +66,7 @@ class AbrigoServiceTest {
     }
 
     @Test
-    void DeveCadastrarAbrigoComSucesso() throws IOException, InterruptedException {
+    void deveCadastrarAbrigoComSucesso() throws IOException, InterruptedException {
 
         String expectedSuccessMessage = "Abrigo cadastrado com sucesso!";
         String expected = "";
