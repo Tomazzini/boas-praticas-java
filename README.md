@@ -19,9 +19,11 @@ Java 17
 
 ⚙️ Start na aplicação
 
-Clonar o projeto
+Clonar o projeto do gitlab:
+
 Na pasta rais do projeto
-java -jar api.jar - esse comando starta a aplicaçã em rest responsável por cadastrar, listar e importar as funcionalidades;
+
+java -jar api.jar - esse comando starta a aplicação em rest responsável por cadastrar, listar e importar as funcionalidades;
 
 Após subir a aplicação apresenta as opções abaixo:
 
